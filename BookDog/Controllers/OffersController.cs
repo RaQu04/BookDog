@@ -167,6 +167,8 @@ namespace BookDog.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+
         private bool OfferExists(int id)
         {
           return (_context.Offer?.Any(e => e.Id == id)).GetValueOrDefault();
