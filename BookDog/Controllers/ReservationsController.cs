@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BookDog.Models;
 using BookDog.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookDog.Controllers
 {
@@ -15,10 +16,12 @@ namespace BookDog.Controllers
     public class ReservationsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public ReservationsController(ApplicationDbContext context)
+        public ReservationsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Reservations
@@ -51,7 +54,7 @@ namespace BookDog.Controllers
         // GET: Reservations/Create
         public IActionResult Create()
         {
-            ViewData["OfferId"] = new SelectList(_context.Offer, "Id", "Id");
+            ViewData["OfferId"] = new SelectList(_context.Offer, "Id", "Title");
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
@@ -61,16 +64,29 @@ namespace BookDog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Start,End,OfferId,UserId")] Reservation reservation)
+        public async Task<IActionResult> Create([Bind("Id,Start,End,OfferId")] ReservationDTO reservationDTO)
         {
+
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            var reservation = new Reservation
+            {
+                Id = reservationDTO.Id,
+                End = reservationDTO.End,
+                Start = reservationDTO.Start,
+                OfferId = reservationDTO.OfferId,
+                Offer  = reservationDTO.Offer,
+                UserId = user.Id
+            };
+
             if (ModelState.IsValid)
             {
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OfferId"] = new SelectList(_context.Offer, "Id", "Id", reservation.OfferId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", reservation.UserId);
+            ViewData["OfferId"] = new SelectList(_context.Offer, "Id", "Title", reservation.OfferId);
+          //  ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", reservation.UserId);
             return View(reservation);
         }
 

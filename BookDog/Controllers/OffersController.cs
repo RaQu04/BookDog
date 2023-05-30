@@ -51,7 +51,7 @@ namespace BookDog.Controllers
         // GET: Offers/Create
         public IActionResult Create()
         {
-            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Id");
+            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace BookDog.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Id", offer.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Name", offer.OwnerId);
             return View(offer);
         }
 
@@ -86,7 +86,7 @@ namespace BookDog.Controllers
             {
                 return NotFound();
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Id", offer.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Name", offer.OwnerId);
             return View(offer);
         }
 
@@ -123,7 +123,7 @@ namespace BookDog.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Id", offer.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Set<Owner>(), "Id", "Name", offer.OwnerId);
             return View(offer);
         }
 
