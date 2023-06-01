@@ -4,7 +4,91 @@
     ViewData["Title"] = "Index";
 }
 
+<style>
+    .offer-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .offer-item {
+        border-radius: 10px;
+        margin: 10px;
+        background-color: #B98753;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        overflow: hidden;
+    }
+
+    .offer-button {
+        background-color: #442E26;
+        color: white;
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        margin: 5px;
+        float: right;
+        display: block;
+    }
+
+    .offer-button-details {
+        background-color: #7E5233;
+    }
+
+    .item-body {
+        padding: 10px;
+    }
+
+    .item-image {
+        width: 100%;
+        object-fit: cover;
+        max-height: 270px;
+    }
+
+    .create-button {
+        float: left;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        float: right;
+    }
+</style>
+
+<div class="offer-wrapper">
+    @foreach (var item in Model)
+    {
+        <div class="coffee-item">
+            <img class="item-image" src="@Html.DisplayFor(modelItem => item.Link)" />
+            <div class="item-body">
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <h4>@Html.DisplayFor(modelItem => item.Price) zł</h4>
+                <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                <p>@Html.DisplayFor(modelItem => item.Owner)</p>
+                <a class="offer-button" asp-action="Order" asp-route-id="@item.Id">Zamów</a>
+                <a class="offer-button offer-button-details" asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
+
+            </div>
+        </div>
+
+    }
+
+</div>
+@*
+
+
+*@<p>
+    <a class="create-button offer-button " asp-action="Create">Create New</a>
+</p>
+
+
+
+
+<br /><br />
 <h1>Index</h1>
+
+
+
+
 
 <p>
     <a asp-action="Create">Create New</a>
