@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Dell\\source\\repos\\BookDog\\BookDog\\wwwroot\\css\\zdjecia\\pies.jpg",
+      "PackagePath": "staticwebassets\\css\\zdjecia\\pies.jpg"
+    },
+    {
       "Id": "C:\\Users\\Dell\\source\\repos\\BookDog\\BookDog\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
