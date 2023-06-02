@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aKJ5yeVj/Oy6RGfsTKv4ys3FnSWCb96YdDWsBQ1qocA=",
+  "Hash": "OoJqw6/A14zmvkwqpquK5jxAwfagrWLpQMAHCTQm3zI=",
   "Source": "BookDog",
   "BasePath": "_content/BookDog",
   "Mode": "Default",
@@ -1086,6 +1086,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Dell\\source\\repos\\BookDog\\BookDog\\wwwroot\\css\\zdjecia\\pies.jpg",
+      "SourceId": "BookDog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Dell\\source\\repos\\BookDog\\BookDog\\wwwroot\\",
+      "BasePath": "_content/BookDog",
+      "RelativePath": "css/zdjecia/pies.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\zdjecia\\pies.jpg"
     },
     {
       "Identity": "C:\\Users\\Dell\\source\\repos\\BookDog\\BookDog\\wwwroot\\favicon.ico",

@@ -169,6 +169,8 @@ namespace BookDog.Controllers
 
 
 
+
+
         private bool OfferExists(int id)
         {
           return (_context.Offer?.Any(e => e.Id == id)).GetValueOrDefault();

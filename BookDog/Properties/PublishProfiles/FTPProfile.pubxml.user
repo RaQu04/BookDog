@@ -7,7 +7,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3wjhbZ8wiEuDLUOV8yFexAAAAAACAAAAAAAQZgAAAAEAACAAAACR5WqGPHbZ/IE+PyaG9BwPbBOGNRTvPVGlgcbg/hY7sAAAAAAOgAAAAAIAACAAAAAY93ICqWoNkSMUcuckAFDDM1YXjkKbLgx/sFixzbYb7iAAAAD/rlvTO2oVnL1UEmoYNKCJHngnQVdywOx5JPCyFMUATkAAAAAQ+uARYaI4FBwT8o2Mk5+d9IOFAmCAfkgVxu10cVdeCC//UzCG3rCUW663i7ANy71P9g0hIa5Y3YLnLk+xVhKG</EncryptedPassword>
     <_PublishTargetUrl>ftp://win8024.site4now.net/bookdog</_PublishTargetUrl>
-    <History>True|2023-06-01T21:01:38.4516137Z;True|2023-05-31T23:50:20.5466897+02:00;True|2023-05-31T22:23:54.4371280+02:00;True|2023-05-30T22:32:59.2321561+02:00;</History>
+    <History>True|2023-06-02T17:42:02.0403886Z;True|2023-06-01T23:01:38.4516137+02:00;True|2023-05-31T23:50:20.5466897+02:00;True|2023-05-31T22:23:54.4371280+02:00;True|2023-05-30T22:32:59.2321561+02:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
   <ItemGroup>
@@ -15,19 +15,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>05/29/2023 18:32:24</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>05/31/2023 22:48:14</publishTime>
+      <publishTime>06/02/2023 19:17:38</publishTime>
     </File>
     <File Include="BookDog.deps.json">
-      <publishTime>06/01/2023 22:01:21</publishTime>
+      <publishTime>06/02/2023 19:18:01</publishTime>
     </File>
     <File Include="BookDog.dll">
-      <publishTime>06/01/2023 22:01:20</publishTime>
+      <publishTime>06/02/2023 19:17:44</publishTime>
     </File>
     <File Include="BookDog.exe">
-      <publishTime>06/01/2023 22:01:20</publishTime>
+      <publishTime>06/02/2023 19:17:45</publishTime>
     </File>
     <File Include="BookDog.pdb">
-      <publishTime>06/01/2023 22:01:20</publishTime>
+      <publishTime>06/02/2023 19:17:44</publishTime>
     </File>
     <File Include="BookDog.runtimeconfig.json">
       <publishTime>05/31/2023 23:26:26</publishTime>
@@ -699,13 +699,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/14/2021 20:38:18</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/01/2023 22:01:21</publishTime>
+      <publishTime>06/02/2023 19:18:01</publishTime>
     </File>
     <File Include="wwwroot/BookDog.styles.css">
       <publishTime>05/30/2023 22:10:32</publishTime>
     </File>
     <File Include="wwwroot/css/site.css">
-      <publishTime>05/29/2023 18:32:24</publishTime>
+      <publishTime>06/01/2023 23:09:35</publishTime>
+    </File>
+    <File Include="wwwroot/css/zdjecia/pies.jpg">
+      <publishTime>06/01/2023 23:07:30</publishTime>
     </File>
     <File Include="wwwroot/favicon.ico">
       <publishTime>05/29/2023 18:32:24</publishTime>

@@ -42,6 +42,7 @@
     .item-image {
         width: 100%;
         object-fit: cover;
+        min-height: 270px;
         max-height: 270px;
     }
 
@@ -57,7 +58,7 @@
 <div class="offer-wrapper">
     @foreach (var item in Model)
     {
-        <div class="coffee-item">
+        <div class="offer-item">
             <img class="item-image" src="@Html.DisplayFor(modelItem => item.Link)" />
             <div class="item-body">
                 <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
