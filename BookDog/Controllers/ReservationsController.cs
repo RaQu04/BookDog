@@ -27,7 +27,11 @@ namespace BookDog.Controllers
         // GET: Reservations
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Reservation.Include(r => r.Offer).Include(r => r.User);
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            // var applicationDbContext = _context.Reservation.Include(r => r.Offer).Include(r => r.User);
+            var applicationDbContext = _context.Reservation.Include(r => r.Offer).Include(r => r.User)
+                .Where(x => x.UserId == user.Id);
             return View(await applicationDbContext.ToListAsync());
         }
 

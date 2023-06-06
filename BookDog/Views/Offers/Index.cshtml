@@ -66,6 +66,7 @@
                 <p>@Html.DisplayFor(modelItem => item.Description)</p>
                 <p>@Html.DisplayFor(modelItem => item.Owner)</p>
                 <a class="offer-button" asp-action="Order" asp-route-id="@item.Id">Zamów</a>
+                <a class="offer-button" asp-action="Order" asp-route-id="@item.Id">Zapisz się</a>
                 <a class="offer-button offer-button-details" asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
 
             </div>
