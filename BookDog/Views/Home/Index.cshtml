@@ -2,8 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Witamy na portalu BookDog!</h1>
-    <img src="~/css/zdjecia/pies.jpg" />
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Witamy na portalu BookDog!</h1>
+        <p class="lead">Twoje miejsce, gdzie znajdziesz idealny nocleg dla swojego pupila podczas wakacji.</p>
+        <hr class="my-4">
+        <p>Dzięki aplikacji BookDog możesz bezpiecznie podróżować, wiedząc, że Twój pupil jest w dobrych rękach.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Dowiedz się więcej</a>
+    </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Zarezerwuj Nocleg</h2>
+            <p>Znajdź idealny nocleg dla swojego pupila w jednym z wielu sprawdzonych hostelów dla zwierząt. Dzięki naszej aplikacji możesz łatwo rezerwować noclegi online.</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Bezpieczeństwo</h2>
+            <p>Twoje bezpieczeństwo i bezpieczeństwo Twojego pupila są dla nas najważniejsze. Wszystkie hostele w naszej ofercie są starannie sprawdzane pod kątem warunków oraz standardów opieki nad zwierzętami.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <img src="~/css/zdjecia/pies.jpg" class="img-fluid smaller-img" alt="Zdjęcie psa">
+        </div>
+    </div>
 </div>
+
+<style>
+    .smaller-img {
+        width: 50%; /* Zmniejszenie szerokości obrazka o połowę */
+        max-width: 500px; /* Maksymalna szerokość obrazka */
+    }
+</style>
