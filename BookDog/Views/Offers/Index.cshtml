@@ -1,0 +1,158 @@
+﻿@model IEnumerable<BookDog.Models.Offer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .offer-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .offer-item {
+        border-radius: 10px;
+        margin: 10px;
+        background-color: #B98753;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        overflow: hidden;
+    }
+
+    .offer-button {
+        background-color: #442E26;
+        color: white;
+        font-weight: 700;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        margin: 5px;
+        float: right;
+        display: block;
+    }
+
+    .offer-button-details {
+        background-color: #7E5233;
+    }
+
+    .item-body {
+        padding: 10px;
+    }
+
+    .item-image {
+        width: 100%;
+        object-fit: cover;
+        min-height: 270px;
+        max-height: 270px;
+    }
+
+    .create-button {
+        float: left;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        float: right;
+    }
+</style>
+
+<div class="offer-wrapper">
+    @foreach (var item in Model)
+    {
+        <div class="offer-item">
+            <img class="item-image" src="@Html.DisplayFor(modelItem => item.Link)" />
+            <div class="item-body">
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <h4>@Html.DisplayFor(modelItem => item.Price) zł</h4>
+                <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                <p>@Html.DisplayFor(modelItem => item.Owner)</p>
+                <a class="offer-button" asp-action="Order" asp-route-id="@item.Id">Zamów</a>
+                <a class="offer-button" asp-action="Order" asp-route-id="@item.Id">Zapisz się</a>
+                <a class="offer-button offer-button-details" asp-action="Details" asp-route-id="@item.Id">Szczegóły</a>
+
+            </div>
+        </div>
+
+    }
+
+</div>
+@*
+
+
+*@<p>
+    <a class="create-button offer-button " asp-action="Dodaj nowe miejsce" class="btn btn-primar btn-sm ">Create New</a>
+</p>
+
+
+
+
+<br /><br />
+<h1>Index</h1>
+
+
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary btn-bg ">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Owner)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAvailable)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Link)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Owner.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAvailable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Link)
+            </td>
+            <td>
+                    <a asp-action="Reservation" asp-route-id="@item.Id" class="btn btn-success btn-sm " style="width:10em">Zarezerwuj</a><br />
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary btn-sm" style="width:10em"> Edit</a> <br />
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm" style="width:10em">Details</a> <br />
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn  btn-outline-danger btn-sm" style="width:10em">Delete</a> <br />
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
