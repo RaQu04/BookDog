@@ -56,8 +56,10 @@ namespace BookDog.Controllers
         }
 
         // GET: Reservations/Create
-        public IActionResult Create()
+        public IActionResult Create(int offerId)
         {
+            ViewBag.OfferId = offerId;
+
             ViewData["OfferId"] = new SelectList(_context.Offer, "Id", "Title");
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
