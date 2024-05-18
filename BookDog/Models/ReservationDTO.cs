@@ -11,5 +11,12 @@ namespace BookDog.Models
         public virtual string Name { get { return Start.ToString() + " - " + End.ToString(); } }
         public int OfferId { get; set; }
         public Offer? Offer { get; set; }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (Start >= End)
+            {
+                yield return new ValidationResult("Data rozpoczęcia musi być wcześniejsza niż data zakończenia.", new[] { "Start" });
+            }
+        }
     }
 }

@@ -1,16 +1,20 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookDog.Models
 {
     public class Reservation
     {
         public int Id { get; set; }
+
         [Display(Name = "Data rozpoczęcia")]
         public DateTime Start { get; set; }
+
         [Display(Name = "Data zakończenia")]
+        [Compare("Start", ErrorMessage = "Data zakończenia nie może być wcześniejsza niż data rozpoczęcia.")]
         public DateTime End { get; set; }
+
         public virtual string Name { get { return Start.ToString() + " - " + End.ToString(); } }
         public int OfferId { get; set; }
         public Offer? Offer { get; set; }
